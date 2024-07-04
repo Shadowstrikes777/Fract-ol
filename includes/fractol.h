@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_errors.c                                     :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 14:35:56 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/03 15:18:52 by mmaevani         ###   ########.fr       */
+/*   Created: 2024/06/24 15:44:54 by mmaevani          #+#    #+#             */
+/*   Updated: 2024/06/24 15:46:45 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#ifndef FRACTOL_H
+# define FRACTOL_H
+# define RED 0xFF0000
+# define BLUE 0x0000FF
+# define ORANGE 0xFFA500
+# define RECTANGLE 1
+# ifndef WINDOW_W
+#  define WINDOW_W 800
+# endif
+# ifndef WINDOW_H
+#  define WINDOW_H 400
+# endif
+// this regroups all the header files 
+# include "m_basic.h"
+# include "utils.h"
 
-void	ft_printparameters()
-{
-	ft_printf("Options :\n");
-	ft_printf("");
-}
-
-void	check_errors(int argc, char **argv)
-{
-	if (argc < 2)
-	{
-		ft_printf("\e[0;31m error Usage : ./fractol [fractal name]\n\033[0m");
-	}
-}
+#endif

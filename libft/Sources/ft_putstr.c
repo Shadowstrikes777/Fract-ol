@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_errors.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 14:35:56 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/03 15:18:52 by mmaevani         ###   ########.fr       */
+/*   Created: 2024/03/11 11:01:30 by mmaevani          #+#    #+#             */
+/*   Updated: 2024/06/24 11:06:04 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "libft.h"
 
-void	ft_printparameters()
+int	ft_putstr(const char *s)
 {
-	ft_printf("Options :\n");
-	ft_printf("");
-}
+	int	count;
+	int	i;
 
-void	check_errors(int argc, char **argv)
-{
-	if (argc < 2)
+	i = 0;
+	count = 0;
+	if (!s)
 	{
-		ft_printf("\e[0;31m error Usage : ./fractol [fractal name]\n\033[0m");
+		count += write(1, "(null)", 6);
+		return (count);
 	}
+	while (s[i])
+	{
+		count += write(1, &s[i], 1);
+		i++;
+	}
+	return (count);
 }

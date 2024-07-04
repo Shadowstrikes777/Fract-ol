@@ -1,0 +1,10 @@
+
+{
+	"C_Cpp.errorSquiggles": "disabled"
+}
+"apc.electron": {
+    "opacity": 0.95,
+    "transparent": true,
+    "backgroundColor": "#00000000",
+    "vibrancy": "ultra-dark"
+},

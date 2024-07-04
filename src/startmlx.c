@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_errors.c                                     :+:      :+:    :+:   */
+/*   startmlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 14:35:56 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/03 15:18:52 by mmaevani         ###   ########.fr       */
+/*   Created: 2024/06/24 14:21:52 by mmaevani          #+#    #+#             */
+/*   Updated: 2024/06/27 17:31:53 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_printparameters()
+void	start_mlx(t_mlx **mlx_data, t_img **img_data)
 {
-	ft_printf("Options :\n");
-	ft_printf("");
-}
+	*mlx_data = malloc(sizeof(t_mlx));
+	// *img_data = malloc(sizeof(t_img));
+	(void ) *img_data;
 
-void	check_errors(int argc, char **argv)
-{
-	if (argc < 2)
-	{
-		ft_printf("\e[0;31m error Usage : ./fractol [fractal name]\n\033[0m");
-	}
+	(*mlx_data)->mlx = mlx_init();
+	(*mlx_data)->win = mlx_new_window((*mlx_data)->mlx, WINDOW_W, WINDOW_H, "fractol");
 }

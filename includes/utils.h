@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_errors.c                                     :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 14:35:56 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/03 15:18:52 by mmaevani         ###   ########.fr       */
+/*   Created: 2024/06/24 15:39:36 by mmaevani          #+#    #+#             */
+/*   Updated: 2024/06/27 15:35:12 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#ifndef UTILS_H
+# define UTILS_H
+void	check_errors(int argc, char **argv);
 
-void	ft_printparameters()
-{
-	ft_printf("Options :\n");
-	ft_printf("");
-}
 
-void	check_errors(int argc, char **argv)
-{
-	if (argc < 2)
-	{
-		ft_printf("\e[0;31m error Usage : ./fractol [fractal name]\n\033[0m");
-	}
-}
+#endif
