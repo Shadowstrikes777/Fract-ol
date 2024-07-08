@@ -20,13 +20,16 @@ Click on the X window, closes the process leaks free
 
 */
 #include "fractol.h"
-int	main(int argc, char **argv)
+
+int	main(int ac, char **av)
 {
 	t_mlx	*mlx_data;
-	t_img	*img_data;
 
-	start_mlx(&mlx_data, &img_data);
+	check_errors(ac, av);
+	start_mlx(&mlx_data);
 	mlx_key_hook(mlx_data->win, key_hook, mlx_data);
+	mlx_hook(mlx_data->win, ONDESTROY, 0, ft_exit_mlx, mlx_data);
 	mlx_loop(mlx_data->mlx);
 	return (0);
 }
+// check arguments if julia and mandelbrot then it s ok else exit with error

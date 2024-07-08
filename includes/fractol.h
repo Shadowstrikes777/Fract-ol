@@ -22,6 +22,7 @@
 # ifndef WINDOW_H
 #  define WINDOW_H 400
 # endif
+# define ERRMSG0 "Usage : ./fractol [fractal name]"
 // this regroups all the header files 
 # include "m_basic.h"
 # include "utils.h"

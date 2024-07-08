@@ -14,14 +14,23 @@
 
 void	ft_printparameters()
 {
-	ft_printf("Options :\n");
-	ft_printf("");
+	ft_printf("Avalaible fractals :\n");
+	ft_printf("julia");
 }
 
-void	check_errors(int argc, char **argv)
+void	check_errors(int ac, char **av)
 {
-	if (argc < 2)
+	if ( 2 == ac && (ft_strncmp(av[1], "julia", 5)
+		|| ft_strncmp(av[1], "mandelbrot", 10)))
+		return ;
+	else
 	{
-		ft_printf("\e[0;31m error Usage : ./fractol [fractal name]\n\033[0m");
+		ft_perror(ERRMSG0);
+		exit(EXIT_FAILURE);
 	}
+}
+void	ft_perror(char *str)
+{
+	ft_putstr_fd(str, 2);
+	ft_putstr_fd("\n", 2);
 }

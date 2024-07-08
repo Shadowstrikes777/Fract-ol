@@ -12,12 +12,13 @@
 
 #include "fractol.h"
 
-void	start_mlx(t_mlx **mlx_data, t_img **img_data)
+void	start_mlx(t_mlx **mlx_data)
 {
-	*mlx_data = malloc(sizeof(t_mlx));
-	// *img_data = malloc(sizeof(t_img));
-	(void ) *img_data;
+	t_mlx	*data;
 
-	(*mlx_data)->mlx = mlx_init();
-	(*mlx_data)->win = mlx_new_window((*mlx_data)->mlx, WINDOW_W, WINDOW_H, "fractol");
+	*mlx_data = malloc(sizeof(t_mlx));
+	data = *mlx_data;
+
+	data->mlx = mlx_init();
+	data->win = mlx_new_window(data->mlx, WINDOW_W, WINDOW_H, "fractol");
 }
