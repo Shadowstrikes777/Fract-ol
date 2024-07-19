@@ -23,7 +23,6 @@ void	start_mlx(t_fr **data_ptr)
 	data->win = mlx_new_window(data->mlx, WINDOW_W, WINDOW_H, "fractol");
 	*data_ptr =  data;
 	ft_init_img(data_ptr);
-	// working fine
 }
 void	ft_init_img(t_fr **data)
 {
