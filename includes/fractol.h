@@ -15,12 +15,11 @@
 # define RED 0xFF0000
 # define BLUE 0x0000FF
 # define ORANGE 0xFFA500
-# define RECTANGLE 1
-# ifndef WINDOW_W
-#  define WINDOW_W 800
-# endif
 # ifndef WINDOW_H
 #  define WINDOW_H 400
+# endif
+# ifndef WINDOW_W
+#  define WINDOW_W 1000
 # endif
 # define ERRMSG0 "Usage : ./fractol [fractal name]"
 // this regroups all the header files 

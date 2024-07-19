@@ -19,6 +19,8 @@
 # include <math.h>
 # include <stdio.h>
 # define ONDESTROY 17
+# define INITERROR "error on mlx init\n"
+# define IMAGE_INIT_ERR "error on image init\n"
 typedef struct s_pos
 {
 	int		x;
@@ -27,28 +29,24 @@ typedef struct s_pos
 
 typedef struct s_img
 {
-	void	*img;
+	void	*img_ptr;
 	char	*addr;
+	t_pos	pos;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 }			t_img;
 
-typedef struct s_mlx
+typedef struct s_fr
 {
 	void	*mlx;
 	void	*win;
-	t_img	*img;
-}			t_mlx;
+	t_img	*img_ptr;
+}			t_fr;
 
-typedef struct s_rect
-{
-	t_pos pos;  /* You can initialize like this: */
-	t_pos size; /* struct s_rect my_rect = { {10, 20}, {30, 40} }; */
-}			t_rect;
-
+void		ft_init_img(t_fr **data);
 void		my_mlx_pixel_put(t_img *data, int x, int y, int color);
-void		start_mlx(t_mlx **mlx_data);
-int			key_hook(int keycode, t_mlx *data);
-void		ft_exit_mlx(t_mlx *data);
+void		start_mlx(t_fr **mlx_data);
+int			key_hook(int keycode, t_fr *data);
+int			ft_exit_mlx(t_fr **data);
 #endif

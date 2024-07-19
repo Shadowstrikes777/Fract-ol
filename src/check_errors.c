@@ -15,9 +15,13 @@
 void	ft_printparameters()
 {
 	ft_printf("Avalaible fractals :\n");
-	ft_printf("julia");
+	ft_printf("julia \t mandelbrot");
 }
-
+void	ft_perror(char *str)
+{
+	ft_putstr_fd(str, 2);
+	ft_putstr_fd("\n", 2);
+}
 void	check_errors(int ac, char **av)
 {
 	if ( 2 == ac && (ft_strncmp(av[1], "julia", 5)
@@ -26,11 +30,7 @@ void	check_errors(int ac, char **av)
 	else
 	{
 		ft_perror(ERRMSG0);
+		ft_printparameters();
 		exit(EXIT_FAILURE);
 	}
-}
-void	ft_perror(char *str)
-{
-	ft_putstr_fd(str, 2);
-	ft_putstr_fd("\n", 2);
 }
