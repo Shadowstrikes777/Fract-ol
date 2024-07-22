@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmaevani <mmaevani@student.42antananarivo. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:35:56 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/03 15:18:52 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:52:04 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_printparameters()
 {
-	ft_printf("Avalaible fractals :\n");
-	ft_printf("julia \t mandelbrot");
+	ft_printf("Avalaible fractals are :\n");
+	ft_printf("_julia\n_mandelbrot\n");
 }
 void	ft_perror(char *str)
 {

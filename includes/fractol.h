@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:44:54 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/24 15:46:45 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/22 19:10:25 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 # define BLUE 0x0000FF
 # define ORANGE 0xFFA500
 # ifndef WINDOW_H
-#  define WINDOW_H 400
+#  define WINDOW_H 800
 # endif
 # ifndef WINDOW_W
-#  define WINDOW_W 1000
+#  define WINDOW_W 800
 # endif
-# define ERRMSG0 "Usage : ./fractol [fractal name]"
+# define ERRMSG0 "usage :\n ./fractal [fractal name] [parameters(if any)]"
+# define JULIA "julia"
+# define MANDELBROT "mandelbrot"
 // this regroups all the header files 
 # include "m_basic.h"
 # include "utils.h"

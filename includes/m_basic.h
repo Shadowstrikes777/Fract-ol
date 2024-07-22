@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   m_basic.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:06:55 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/27 19:38:08 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/22 19:10:38 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define ONDESTROY 17
 # define INITERROR "error on mlx init\n"
 # define IMAGE_INIT_ERR "error on image init\n"
+
 typedef struct s_pos
 {
 	int		x;
@@ -42,6 +43,7 @@ typedef struct s_fr
 	void	*mlx;
 	void	*win;
 	t_img	*img_ptr;
+	char	*f_name;
 }			t_fr;
 
 void		ft_init_img(t_fr **data);
