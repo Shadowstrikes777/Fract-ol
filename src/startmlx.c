@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   startmlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaevani <mmaevani@student.42antananarivo. +#+  +:+       +#+        */
+/*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:21:52 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 18:51:16 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/23 19:15:11 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "fractol.h"
 
 void	start_mlx(t_fr **data_ptr)
 {
@@ -23,6 +24,7 @@ void	start_mlx(t_fr **data_ptr)
 	*data_ptr =  data;
 	ft_init_img(data_ptr);
 }
+
 void	ft_init_img(t_fr **data)
 {
 	t_img *img;
