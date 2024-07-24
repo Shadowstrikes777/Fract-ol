@@ -1,7 +1,8 @@
 {
 	"files.associations": {
 		"header.h": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"fractol.h": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled"
 }

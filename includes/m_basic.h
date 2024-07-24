@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:06:55 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 19:10:38 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/24 02:31:56 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ typedef struct s_pos
 	int		y;
 }			t_pos;
 
+typedef struct s_range
+{
+	int		min;
+	int		max;
+}			t_range;
+
 typedef struct s_img
 {
 	void	*img_ptr;
@@ -38,12 +44,24 @@ typedef struct s_img
 	int		endian;
 }			t_img;
 
+typedef struct s_complex
+{
+	double	r;
+	double	i;
+}			t_complex;
+
 typedef struct s_fr
 {
-	void	*mlx;
-	void	*win;
-	t_img	*img_ptr;
-	char	*f_name;
+	void		*mlx;
+	void		*win;
+	t_img		*img_ptr;
+	char		*f_name;
+	__u_int		max_iter;
+	t_complex	c;
+	t_complex	z;
+	t_range		r;
+	t_range		i;
+	t_range		window;
 }			t_fr;
 
 void		ft_init_img(t_fr **data);
