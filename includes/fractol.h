@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:44:54 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/24 02:34:37 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/24 10:31:29 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define BLUE 0x0000FF
 # define BLACK 0x000000
 # define ORANGE 0xFFA500
+# define WHITE 0xFFFFFF
 # define TRUE 1
 # define FALSE 0
 # ifndef WINDOW_H

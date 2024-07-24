@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:06:55 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/24 02:31:56 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/24 11:49:31 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ typedef struct s_fr
 	t_complex	z;
 	t_range		r;
 	t_range		i;
-	t_range		window;
+	t_range		window_w;
+	t_range		window_h;
 }			t_fr;
 
 void		ft_init_img(t_fr **data);
