@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:36:43 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/24 10:43:19 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:11:47 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,33 +23,14 @@ Click on the X window, closes the process leaks free
 int	main(int ac, char **av)
 {
 	t_fr	*data;
-	
+
 	check_errors(ac, av);
 	start_mlx(&data);
-	data->f_name = av[1];
-	make_mandelbrot(data);
+	init_fr(data, av);
 	mlx_key_hook(data->win, key_hook, data);
+	mlx_mouse_hook(data->win, mouse_hook, data);
 	mlx_hook(data->win, ONDESTROY, 0, ft_exit_mlx, &data);
 	mlx_loop(data->mlx);
 	return (0);
 }
 
-void	ft_draw_bg(t_fr *data)
-{
-	int	x;
-	int y;
-
-	x = 0;
-	y = 0;
-	while (y < WINDOW_H)
-	{
-		while (x < WINDOW_W)
-		{
-			my_mlx_pixel_put(data->img_ptr, x, y, BLUE);
-			x++;
-		}
-		x = 0;
-		y++;
-	}
-	mlx_put_image_to_window(data->mlx, data->win, data->img_ptr->img_ptr, 0, 0);
-}

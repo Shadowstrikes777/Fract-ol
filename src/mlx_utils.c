@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaevani <mmaevani@student.42antananarivo. +#+  +:+       +#+        */
+/*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:20:20 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 18:51:20 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:19:04 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,22 @@ int key_hook(int keycode, t_fr *data)
 		printf("keycode: %d\n", keycode);
 		return (0);
 	}
+}
+int	mouse_hook(int keycode, t_fr *data)
+{
+	if (Button4 == keycode)
+	{
+		
+	}
+	else if (Button5 == keycode)
+	{
+		printf("zoomed out\n");
+	}
+	else
+	{
+		printf("keycode: %d\n", keycode);
+	}
+	return (0);
 }
 
 int	ft_exit_mlx(t_fr **data)

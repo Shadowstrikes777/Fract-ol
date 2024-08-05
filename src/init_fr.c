@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex_utils.c                                    :+:      :+:    :+:   */
+/*   init_fr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 01:31:14 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/24 13:25:18 by mmaevani         ###   ########.fr       */
+/*   Created: 2024/07/24 20:50:13 by mmaevani          #+#    #+#             */
+/*   Updated: 2024/07/25 18:20:57 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_complex	add_c(t_complex *zi, t_complex *z2)
+void	init_fr(t_fr *data, char **av)
 {
-	t_complex	result;
-
-	result.r = zi->r + z2->r;
-	result.i = zi->i + z2->i;
-	return (result);
-}
-
-t_complex	mul_c(t_complex *zi, t_complex *z2)
-{
-	t_complex	result;
-
-	result.r = zi->r * z2->r - zi->i * z2->i;
-	result.i = zi->r * z2->i + zi->i * z2->r;
-	return (result);
-}
-
-double	norm_c_squarred(t_complex z)
-{
-	return (z.r * z.r + z.i * z.i);
+	data->f_name = av[1];
+	printf("%s\n", data->f_name);
+	if (!(ft_strncmp(data->f_name, MANDELBROT, 10)))
+	{
+		init_mandel(data);
+		make_mandelbrot(data);
+	}
+	else
+	{
+		ft_perror(ERRMSG0);
+		ft_printparameters();
+		exit(EXIT_FAILURE);
+	}
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 01:46:32 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/24 11:56:14 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:29:41 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void	init_mandel(t_fr *data)
 {
-	data->max_iter = 50;
+	data->zoom = 1.0;
+	data->max_iter = 500;
 	data->r.min = -2.0;
 	data->r.max = 2.0;
-	data->i.min = -1.5;
-	data->i.max = 1.5;
+	data->i.min = -1.7;
+	data->i.max = 1.7;
 	data->window_w.min = 0;
-	data->window_w.max = WINDOW_W;
+	data->window_w.max = WINDOW_W - 1;
 	data->window_h.min = 0;
-	data->window_h.max = WINDOW_H;
+	data->window_h.max = WINDOW_H - 1;
 }
 
 int	calc_mandel(t_fr *data, t_complex c)
@@ -36,12 +37,13 @@ int	calc_mandel(t_fr *data, t_complex c)
 	z.r = 0;
 	z.i = 0;
 	norm = 0;
-	while (norm < 2 && ++i < data->max_iter)
+	while (norm < 4 && ++i < data->max_iter)
 	{
 		tmp = mul_c(&z, &z);
 		z = add_c(&tmp, &c);
-		norm = norm_c(z);
+		norm = norm_c_squarred(z);
 	}
+	data->iter = i;
 	if (i == data->max_iter)
 		return (TRUE);
 	else
@@ -61,7 +63,6 @@ void	make_mandelbrot(t_fr *data)
 	int			y;
 	t_complex	c;
 
-	init_mandel(data);
 	x = -1;
 	while (++x < WINDOW_W)
 	{
@@ -73,7 +74,7 @@ void	make_mandelbrot(t_fr *data)
 			if (calc_mandel(data, c) == TRUE)
 				my_mlx_pixel_put(data->img_ptr, x, y, BLACK);
 			else
-				my_mlx_pixel_put(data->img_ptr, x, y, BLUE);
+				my_mlx_pixel_put(data->img_ptr, x, y, ((data->iter * 255 / data->max_iter)));
 		}
 	}
 	mlx_put_image_to_window(data->mlx, data->win, data->img_ptr->img_ptr, 0, 0);

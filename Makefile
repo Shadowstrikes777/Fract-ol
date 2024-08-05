@@ -1,6 +1,6 @@
 TARGET	= fractol
 CC		= cc
-CFLAGS	= -Wall -Werror -Wextra -g
+CFLAGS	= -g -Wall -Werror -Wextra
 
 OBJ_DIR	= ./bin/
 INC_DIR	= ./includes/
@@ -16,7 +16,7 @@ INCS	= fractol.h m_basic.h utils.h
 
 SRCS	= check_errors.c main.c \
 				startmlx.c mlx_utils.c complex_utils.c \
-				mandelbrot.c
+				mandelbrot.c init_fr.c
 
 SRC		= $(addprefix $(SRC_DIR), $(SRCS))
 INC		= $(addprefix $(INC_DIR), $(INCS))
@@ -30,7 +30,7 @@ $(TARGET) :  $(OBJ_DIR) $(OBJ)
 			$(CC) -o $@ $(OBJ) $(LFLAGS) $(CFLAGS)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INC)
-			$(CC) -c $(IFLAGS) -o $@ $<
+			$(CC) -c -g $(IFLAGS) -o $@ $<
 
 $(OBJ_DIR) :
 		mkdir -p $(OBJ_DIR)
