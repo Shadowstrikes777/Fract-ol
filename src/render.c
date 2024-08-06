@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 15:39:36 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 19:10:31 by mmaevani         ###   ########.fr       */
+/*   Created: 2024/08/06 07:59:19 by mmaevani          #+#    #+#             */
+/*   Updated: 2024/08/06 11:55:46 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
-void	check_errors(int argc, char **argv);
+#include "fractol.h"
 
-
-#endif
+void	render(t_fr *data)
+{
+	while ()
+}

@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:06:55 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/25 15:10:29 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/06 12:00:05 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ typedef struct s_fr
 	t_img		*img_ptr;
 	char		*f_name;
 	double		zoom;
+	double		shift_x;
+	double		shift_y;
 	__u_int		max_iter;
 	__u_int		iter;
 	t_complex	c;
@@ -72,5 +74,5 @@ void		my_mlx_pixel_put(t_img *data, int x, int y, int color);
 void		start_mlx(t_fr **mlx_data);
 int			key_hook(int keycode, t_fr *data);
 int			ft_exit_mlx(t_fr **data);
-int			mouse_hook(int keycode, t_fr *data);
+int			mouse_hook(int keycode, int x, int y, t_fr *data);
 #endif

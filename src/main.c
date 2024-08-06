@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:36:43 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/25 15:11:47 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/05 18:39:09 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	main(int ac, char **av)
 	check_errors(ac, av);
 	start_mlx(&data);
 	init_fr(data, av);
-	mlx_key_hook(data->win, key_hook, data);
-	mlx_mouse_hook(data->win, mouse_hook, data);
-	mlx_hook(data->win, ONDESTROY, 0, ft_exit_mlx, &data);
+	mlx_hook(data->win, KeyPress, KeyPressMask, key_hook, data);
+	mlx_hook(data->win, ButtonPress, ButtonPressMask, mouse_hook, data);
+	mlx_hook(data->win, ONDESTROY, StructureNotifyMask, ft_exit_mlx, &data);
 	mlx_loop(data->mlx);
 	return (0);
 }

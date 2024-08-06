@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 01:46:32 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/25 18:29:41 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/05 19:11:26 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void	init_mandel(t_fr *data)
 	data->max_iter = 500;
 	data->r.min = -2.0;
 	data->r.max = 2.0;
-	data->i.min = -1.7;
-	data->i.max = 1.7;
+	data->i.min = -2.0;
+	data->i.max = 2.0;
+	data->shift_x = 0.0;
+	data->shift_y = 0.0;
 	data->window_w.min = 0;
 	data->window_w.max = WINDOW_W - 1;
 	data->window_h.min = 0;
@@ -57,6 +59,7 @@ double	scale(double value, t_range source, t_range cible)
 	result = cible.min + (cible.max - cible.min) * (value - source.min) / (source.max - source.min);
 	return (result);
 }
+
 void	make_mandelbrot(t_fr *data)
 {
 	int			x;
@@ -69,12 +72,13 @@ void	make_mandelbrot(t_fr *data)
 		y = -1;
 		while (++y < WINDOW_H)
 		{
-			c.r = scale(x, data->window_w, data->r);
+			int tmp;
+			c.r = scale(x, data->window_w, data->r) + data->shift_x;
 			c.i = scale(y, data->window_h, data->i);
 			if (calc_mandel(data, c) == TRUE)
 				my_mlx_pixel_put(data->img_ptr, x, y, BLACK);
 			else
-				my_mlx_pixel_put(data->img_ptr, x, y, ((data->iter * 255 / data->max_iter)));
+				my_mlx_pixel_put(data->img_ptr, x, y, BLUE);
 		}
 	}
 	mlx_put_image_to_window(data->mlx, data->win, data->img_ptr->img_ptr, 0, 0);

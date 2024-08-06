@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_fr.c                                          :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 20:50:13 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/25 18:20:57 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/06 12:10:33 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_fr(t_fr *data, char **av)
 	}
 	else
 	{
-		ft_perror(ERRMSG0);
+		perror(ERRMSG0);
 		ft_printparameters();
 		exit(EXIT_FAILURE);
 	}
