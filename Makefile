@@ -1,6 +1,6 @@
 TARGET	= fractol
 CC		= cc
-CFLAGS	= -g -Wall -Werror -Wextra
+CFLAGS	= -g3 -Wall -Werror -Wextra
 
 OBJ_DIR	= ./bin/
 INC_DIR	= ./includes/
@@ -13,7 +13,8 @@ IFLAGS	= -I$(INC_DIR) -I$(MLXDIR) -I$(LIBFT)Includes
 LFLAGS	= -L$(LIBFT) -lft -L$(MLXDIR) -lmlx_Linux -lm -lmlx -lXext -lX11
 
 INCS	= fractol.h m_basic.h
-SRCS	= check_errors.c main.c startmlx.c mlx_utils.c complex_utils.c mandelbrot.c init.c
+SRCS	= check_errors.c main.c startmlx.c mlx_utils.c complex_numbers_utils.c mandelbrot.c init.c \
+			events.c
 SRC		= $(addprefix $(SRC_DIR), $(SRCS))
 INC		= $(addprefix $(INC_DIR), $(INCS))
 OBJ		= $(SRCS:%.c=$(OBJ_DIR)%.o)
@@ -29,7 +30,7 @@ $(TARGET) :  $(OBJ_DIR) $(OBJ)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(INC)
 	@echo "\033[1;33mCompiling $<\033[0m\n"
-	@$(CC) -c -g $(IFLAGS) -o $@ $<
+	@$(CC) -c -g3 $(IFLAGS) -o $@ $<
 	@echo "\033[1;33mDone ✅\033[0m\n"
 
 $(OBJ_DIR) :

@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:17:03 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 19:09:29 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/15 07:17:00 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (ft_substr(s1, i, len - i));
 }
-/*#include <stdio.h>
-
-int main() {
-    const char *s1 = "  Hello, World!  ";
-    const char *set = " ";
-    
-    char *trimmed = ft_strtrim(s1, set);
-
-    if (trimmed != NULL) {
-        printf("Original string: \"%s\"\n", s1);
-        printf("Trimmed string: \"%s\"\n", trimmed);
-        free(trimmed); // Free the memory allocated by ft_strtrim
-    } else {
-        printf("Memory allocation failed.\n");
-    }
-
-    return 0;
-}*/

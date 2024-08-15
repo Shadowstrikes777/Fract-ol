@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 01:46:32 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/05 19:11:26 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/06 12:48:56 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ double	scale(double value, t_range source, t_range cible)
 	return (result);
 }
 
-void	make_mandelbrot(t_fr *data)
+void	render_mandel(t_fr *data)
 {
 	int			x;
 	int			y;

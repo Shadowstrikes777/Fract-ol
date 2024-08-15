@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:55:00 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 19:07:48 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/15 07:18:52 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,3 @@ int	ft_putnbrbase(int n, const char *base)
 	count += ft_putchar(c);
 	return (count);
 }
-/*
-int	main(void)
-{
-	ft_putnbrbase(255,"0123456789abcdef");
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:21:52 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/25 14:47:28 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/15 17:31:12 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	start_mlx(t_fr **data_ptr)
 {
 	t_fr	*data;
 
-	data = (t_fr *) malloc(sizeof(t_fr));
+	data = *data_ptr;
 	data->mlx = mlx_init();
 	if (!data->mlx)
 		ft_printf(INITERROR);
 	data->win = mlx_new_window(data->mlx, WINDOW_W, WINDOW_H, "fractol");
-	*data_ptr =  data;
+	printf("%p", *data_ptr);
 	ft_init_img(data_ptr);
 }
 

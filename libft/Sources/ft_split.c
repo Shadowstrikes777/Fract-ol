@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:36:29 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 19:08:02 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/15 07:18:37 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,27 +82,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (ptr - nb_words);
 }
-/*
-#include <stdio.h>
-
-int main(void)
-{
-    char    **result;
-    int     i;
-
-    result = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-    if (result == NULL)
-    {
-        printf("Error: ft_split returned NULL\n");
-        return (1);
-    }
-    i = 0;
-    while (result[i] != NULL)
-    {
-        printf("%s\n", result[i]);
-        free(result[i]);
-        i++;
-    }
-    free(result);
-    return (0);
-}*/

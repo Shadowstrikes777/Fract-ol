@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:31:34 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 19:09:34 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/15 07:17:08 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,3 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	ft_strlcpy(p, s + start, len + 1);
 	return (p);
 }
-//#include <stdio.h>
-/*int	main(void)
-{
-	char	*substring1;
-	char	*substring2;
-
-	substring1 = ft_substr("i just want this part #############", 5, 20);
-	printf("%s\n", substring1);
-	free(substring1);
-	substring2 = ft_substr("1", 0, 1);
-	printf("%s\n", substring2);
-	free(substring2); 
-	return (0);
-}
-*/

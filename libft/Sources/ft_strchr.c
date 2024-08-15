@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 11:03:53 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 19:08:06 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/15 07:25:18 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,3 @@ char	*ft_strchr(const char *s, int c)
 	else
 		return (NULL);
 }
-/*
-int	main(void)
-{
-	printf("%p\n", ft_strchr("teste",'a'));
-}*/
