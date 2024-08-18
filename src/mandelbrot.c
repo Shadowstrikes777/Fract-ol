@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 01:46:32 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/18 17:07:37 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:55:33 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ int	calc_mandel(t_fr *data, t_complex c)
 	i = -1;
 	z.r = 0;
 	z.i = 0;
-	norm = 0;
 	c.r = c.r * data->zoom + data->shift_x;
 	c.i = c.i * data->zoom + data->shift_y;
-	while (norm < 4 && ++i < data->max_iter)
+	while (z.r * z.r + z.i * z.i < 4 && ++i < data->max_iter)
 	{
-		tmp = mul_c(&z, &z);
-		z = add_c(&tmp, &c);
-		norm = norm_c_squarred(z);
+		tmp.r = z.r * z.r - z.i * z.i;
+    	tmp.i = 2 * z.r * z.i;
+		z.r = tmp.r + c.r;
+		z.i = tmp.i + c.i;
 	}
 	data->iter = i;
 	if (i == data->max_iter)
@@ -54,10 +54,3 @@ int	calc_mandel(t_fr *data, t_complex c)
 		my_mlx_pixel_put(data->img_ptr, data->x, data->y, (BRITISH * (i % 255)));
 }
 
-double	scale(double value, t_range source, t_range cible)
-{
-	double	result;
-
-	result = cible.min + (cible.max - cible.min) * (value - source.min) / (source.max - source.min);
-	return (result);
-}

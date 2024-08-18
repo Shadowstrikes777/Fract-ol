@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:40:26 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/18 13:38:13 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:58:04 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int key_hook(int keycode, t_fr *data)
 int	mouse_hook(int keycode, int x, int y, t_fr *data)
 {
 	if (Button4 == keycode)
-		data->zoom *= 1.1;
-	else if (Button5 == keycode)
 		data->zoom /= 1.1;
+	else if (Button5 == keycode)
+		data->zoom *= 1.1;
 	render(data);
 }
 

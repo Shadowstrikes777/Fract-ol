@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 07:59:19 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/18 17:07:58 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:14:01 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	handlepixel(t_fr *data)
 	t_complex	c;
 
 	c.r = (data->r.min + (double)data->x * (data->r.max - data->r.min) / WINDOW_W);
-	c.i = (data->i.max + (double)data->y * (data->i.min - data->i.max) / WINDOW_H );
+	c.i = (data->i.max + (double)data->y * (data->i.min - data->i.max) / WINDOW_H);
 	if (data->id == MANDELBROT)
 		calc_mandel(data, c);
 }
