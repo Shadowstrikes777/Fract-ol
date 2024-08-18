@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:44:54 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/15 17:21:16 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 16:26:32 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define ORANGE 0xFFA500
 # define YELLOW 0xFFFF00
 # define WHITE 0xFFFFFF
+# define BRITISH 0xFCBE11
 # define TRUE 1
 # define FALSE 0
 # ifndef WINDOW_H
@@ -27,8 +28,8 @@
 #  define WINDOW_W 800
 # endif
 # define ERRMSG0 "usage :\n ./fractal [fractal name] [parameters(if any)]"
-# define JULIA "julia"
-# define MANDELBROT "mandelbrot"
+# define MANDELBROT 1
+# define JULIA 2
 # include "m_basic.h"
 
 void		ft_printparameters();
@@ -39,8 +40,10 @@ t_complex	mul_c(t_complex *zi, t_complex *z2);
 t_complex	add_c(t_complex *zi, t_complex *z2);
 void		init_mandel(t_fr *data);
 int			calc_mandel(t_fr *data, t_complex c);
-void		render_mandel(t_fr *data);
+// void		render_mandel(t_fr *data);
 void		render(t_fr *data);
 void		init_fr(t_fr *data, char **av);
 void		init_data(t_fr **data);
+double		scale(double value, t_range source, t_range cible);
+void		handlepixel(t_fr *data);
 #endif

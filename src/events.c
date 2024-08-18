@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:40:26 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/06 12:54:01 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 13:38:13 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int key_hook(int keycode, t_fr *data)
 		data->shift_x += 0.5;
 	else if (XK_Left == keycode)
 		data->shift_x -= 0.5;
+	else if (XK_Up == keycode)
+		data->shift_y += 0.5;
+	else if (XK_Down == keycode)
+		data->shift_y -= 0.5;
 	else if (XK_KP_Add == keycode)
 	{
 		data->max_iter += 10;
@@ -30,19 +34,16 @@ int key_hook(int keycode, t_fr *data)
 	}
 	else if (XK_KP_Subtract == keycode)
 		data->max_iter -= 50;
-	render_mandel(data);
+	render(data);
 }
 
 int	mouse_hook(int keycode, int x, int y, t_fr *data)
 {
 	if (Button4 == keycode)
-	{
 		data->zoom *= 1.1;
-	}
 	else if (Button5 == keycode)
-	{
 		data->zoom /= 1.1;
-	}
+	render(data);
 }
 
 int	ft_exit_mlx(t_fr **data)

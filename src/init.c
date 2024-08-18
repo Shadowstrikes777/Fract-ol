@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 20:50:13 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/15 17:22:18 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 16:32:19 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	init_fr(t_fr *data, char **av)
 {
-	if ((ft_strncmp(data->f_name, MANDELBROT, 10) == 0))
+	if (data->id == MANDELBROT)
 	{
 		ft_printf("rendering mandelbrot");
 		init_mandel(data);
-		render_mandel(data);
+		render(data);
 	}
 	else
 	{

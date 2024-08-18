@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:26:20 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/07/22 19:06:58 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 12:39:20 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (cdest);
 }
-/*
-int main()
-{
-	char src[] = "bonjour";
-	char dest[100];
 
-	printf("The dest  = %s :\n " , dest)
-	char *destptr = ft_memcpy(dest,src,strlen(src) + 1); 
-	// + 1 is for the null terminator
-    printf("The dest  = %s :\n " , dest);
-    printf("The destptraddress  = %p : the destaddress = %p " , destptr, dest);
-}*/

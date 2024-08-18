@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:35:56 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/15 17:28:59 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 16:32:54 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ void	ft_printparameters()
 
 void    check_args(int ac, char **av, t_fr **data)
 {
-	if (ac >= 2 && (ft_strncmp(av[1], "mandelbrot", 10) == 0 || ft_strncmp(av[1], "julia", 5) == 0))
+	if (ac >= 2 && (ft_strncmp(av[1], "mandelbrot", 10) == 0))
 	{
 		init_data(data);
-		(*data)->f_name = av[1];
+		if (ft_strncmp(av[1], "julia", 5) == 0)
+			(*data)->id = JULIA;
+		else
+			(*data)->id = MANDELBROT;
 	}
 	else
 	{

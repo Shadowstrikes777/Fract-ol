@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 01:46:32 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/06 12:48:56 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:07:37 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	calc_mandel(t_fr *data, t_complex c)
 	z.r = 0;
 	z.i = 0;
 	norm = 0;
+	c.r = c.r * data->zoom + data->shift_x;
+	c.i = c.i * data->zoom + data->shift_y;
 	while (norm < 4 && ++i < data->max_iter)
 	{
 		tmp = mul_c(&z, &z);
@@ -47,9 +49,9 @@ int	calc_mandel(t_fr *data, t_complex c)
 	}
 	data->iter = i;
 	if (i == data->max_iter)
-		return (TRUE);
+		my_mlx_pixel_put(data->img_ptr, data->x, data->y, BLACK);
 	else
-		return (FALSE);
+		my_mlx_pixel_put(data->img_ptr, data->x, data->y, (BRITISH * (i % 255)));
 }
 
 double	scale(double value, t_range source, t_range cible)
@@ -58,28 +60,4 @@ double	scale(double value, t_range source, t_range cible)
 
 	result = cible.min + (cible.max - cible.min) * (value - source.min) / (source.max - source.min);
 	return (result);
-}
-
-void	render_mandel(t_fr *data)
-{
-	int			x;
-	int			y;
-	t_complex	c;
-
-	x = -1;
-	while (++x < WINDOW_W)
-	{
-		y = -1;
-		while (++y < WINDOW_H)
-		{
-			int tmp;
-			c.r = scale(x, data->window_w, data->r) + data->shift_x;
-			c.i = scale(y, data->window_h, data->i);
-			if (calc_mandel(data, c) == TRUE)
-				my_mlx_pixel_put(data->img_ptr, x, y, BLACK);
-			else
-				my_mlx_pixel_put(data->img_ptr, x, y, BLUE);
-		}
-	}
-	mlx_put_image_to_window(data->mlx, data->win, data->img_ptr->img_ptr, 0, 0);
 }
