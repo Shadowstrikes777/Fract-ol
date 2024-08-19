@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:44:54 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/19 11:55:45 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:07:23 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,6 @@ void		ft_putendl(char *str);
 void		parse_args(char **av, t_fr **data);
 void		check_julia_args(char **av, t_fr **data);
 double		ft_atof(const char *str);
+void		init_julia(t_fr *data);
+int			calc_julia(t_fr *data);
 #endif

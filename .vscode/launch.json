@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/fractol",  // Path to your executable
-            "args": ["julia", "0.4565", "45687"],  // Arguments to pass to your program
+            "args": ["julia", "-0.5251993", "-0.5251993"],  // Arguments to pass to your program
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",  // Working directory
             "environment": [],

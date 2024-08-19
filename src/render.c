@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 07:59:19 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/18 17:14:01 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:09:53 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,14 @@ void	handlepixel(t_fr *data)
 	c.i = (data->i.max + (double)data->y * (data->i.min - data->i.max) / WINDOW_H);
 	if (data->id == MANDELBROT)
 		calc_mandel(data, c);
+	if (data->id == JULIA)
+	{
+		data->z.r = c.r;
+		data->z.i = c.i;
+		calc_julia(data);
+	}
+	if (data->iter == data->max_iter)
+		my_mlx_pixel_put(data->img_ptr, data->x, data->y, BLACK);
+	else
+		my_mlx_pixel_put(data->img_ptr, data->x, data->y, (BRITISH * (data->iter % 255)));
 }

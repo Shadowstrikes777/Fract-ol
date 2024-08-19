@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:06:55 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/18 16:31:47 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:33:12 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,14 @@ typedef struct s_fr
 {
 	void		*mlx;
 	void		*win;
-	t_img		*img_ptr;
+	int			x;
+	int			y;
+	int			id;
 	double		zoom;
 	double		shift_x;
 	double		shift_y;
+	char		*f_name;
+	t_img		*img_ptr;
 	__u_int		max_iter;
 	__u_int		iter;
 	t_complex	c;
@@ -66,9 +70,6 @@ typedef struct s_fr
 	t_range		i;
 	t_range		window_w;
 	t_range		window_h;
-	int			x;
-	int			y;
-	int			id;
 }			t_fr;
 
 void		ft_init_img(t_fr **data);

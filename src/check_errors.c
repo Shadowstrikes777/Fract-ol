@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:35:56 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/19 11:56:45 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:47:59 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,23 @@ void	ft_printparameters()
 
 void    check_args(int ac, char **av, t_fr **data)
 {
-	if (ac >= 2)
+	if (ac >= 2 && ac != 3)
 	{
 		if (ft_strncmp(av[1], "mandelbrot", 10) == 0)
 		{
 			init_data(data);
 			(*data)->id = MANDELBROT;
 		}	
-		if (ft_strncmp(av[1], "julia", 5) == 0 && ac == 4)
+		if (ft_strncmp(av[1], "julia", 5) == 0)
 		{
 			init_data(data);
 			(*data)->id = JULIA;
+			if (ac == 2)
+			{
+				(*data)->c.r = -0.7;
+				(*data)->c.i = 0.27015;
+				return ;
+			}
 			parse_args(av, data);
 		}
 	}
@@ -54,40 +60,13 @@ void	parse_args(char **av, t_fr **data)
 		return ;
 	else
 	{
-		check_julia_args(av, data);
+		if (!ft_strchr(av[2], '.'))
+			ft_printparameters();
+		if (!ft_strchr(av[3], '.'))
+			ft_printparameters();
 		(*data)->c.r = ft_atof(av[2]);
 		(*data)->c.i = ft_atof(av[3]);
-	}
-}
-
-void check_julia_args(char **av, t_fr **data)
-{
-	int i;
-	int j;
-	int has_dot;
-	
-	has_dot = 0;
-	j = 2;
-	while (av[j])
-	{
-		i = 0;
-		if (av[j][i] == '-' || av[j][i] == '+')
-			i++;
-		while (av[j][i])
-		{
-			if (!ft_isdigit(av[j][i]))
-			{
-				if (av[j][i] == '.' && !has_dot)
-					has_dot = 1;
-				else
-				{
-					printf("Error: argument must be a double\n");
-					ft_exit_mlx(data);
-					exit(EXIT_FAILURE);
-				}
-			}
-			i++;
-		}
-		j++;
+		if ((*data)->c.r > 2 || (*data)->c.r < -2 || (*data)->c.i > 2 || (*data)->c.i < -2)
+			ft_printparameters();
 	}
 }

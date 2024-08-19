@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 20:50:13 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/19 11:08:28 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/19 13:46:36 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void	init_fr(t_fr *data, char **av)
 		ft_printf("rendering mandelbrot");
 		init_mandel(data);
 		render(data);
+	}
+	else if (data->id == JULIA)
+	{
+		// todo
+		ft_printf("rendering julia");
+		init_julia(data);
 	}
 	else
 	{
