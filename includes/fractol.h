@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 15:44:54 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/18 16:26:32 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/19 11:55:45 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,13 @@ t_complex	mul_c(t_complex *zi, t_complex *z2);
 t_complex	add_c(t_complex *zi, t_complex *z2);
 void		init_mandel(t_fr *data);
 int			calc_mandel(t_fr *data, t_complex c);
-// void		render_mandel(t_fr *data);
+void		mallocerror(void *ptr);
 void		render(t_fr *data);
 void		init_fr(t_fr *data, char **av);
 void		init_data(t_fr **data);
-double		scale(double value, t_range source, t_range cible);
 void		handlepixel(t_fr *data);
+void		ft_putendl(char *str);
+void		parse_args(char **av, t_fr **data);
+void		check_julia_args(char **av, t_fr **data);
+double		ft_atof(const char *str);
 #endif

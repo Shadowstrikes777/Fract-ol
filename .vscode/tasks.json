@@ -1,0 +1,55 @@
+// {
+//     "version": "2.0.0",
+//     "tasks": [
+// 		{
+//             "label": "set_debug_args",
+//             "type": "shell",
+//             "command": "${workspaceFolder}/set_debug_args.sh",
+//             "problemMatcher": [],
+//             "detail": "Run script to set environment variables for debugging."
+//         },
+//         {
+//             "label": "build",
+//             "type": "shell",
+//             "command": "make",
+//             "args": [
+//                 "all"  // Replace 'all' with your specific make target if needed
+//             ],
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             },
+//             "problemMatcher": ["$gcc"],
+//             "detail": "Task to build the project using Makefile.",
+// 			"dependsOn": "set_debug_args"
+//         }
+//     ]
+// }
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "set_debug_args",
+            "type": "shell",
+            "command": "bash",
+            "args": ["-c", "source ${workspaceFolder}/set_debug_args.sh"],
+            "problemMatcher": [],
+            "detail": "Run script to set environment variables for debugging."
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "all"  // Replace 'all' with your specific make target if needed
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Task to build the project using Makefile.",
+            // "dependsOn": "set_debug_args"
+        }
+    ]
+}

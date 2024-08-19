@@ -6,7 +6,7 @@
 /*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:40:26 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/08/18 17:58:04 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/18 17:59:45 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,6 @@ int key_hook(int keycode, t_fr *data)
 		data->shift_y += 0.5;
 	else if (XK_Down == keycode)
 		data->shift_y -= 0.5;
-	else if (XK_KP_Add == keycode)
-	{
-		data->max_iter += 10;
-		printf("%d\n", data->max_iter);
-	}
-	else if (XK_KP_Subtract == keycode)
-		data->max_iter -= 50;
 	render(data);
 }
 
